@@ -26,3 +26,31 @@ const addPositiveNumbers = () => {
 }
 const output2 = addPositiveNumbers()
 console.log(output2);
+
+// Task 3: Write a JavaScript program to find the most frequent element in an array and return it. 
+
+const numbers2 =  [3, 5, 2, 5, 3, 3, 1, 4, 5]
+
+
+//task:4 Implement a JavaScript function to find the second smallest element in an array of numbers. The function should return the second smallest number.
+const numbers3 =  [23, 455, 2, 56, 33, 39, 13, 4, 25]
+
+const getSecondLargestNumber = () =>{
+
+    let largeNum = 0;
+    let secondLargeNum = 0;
+    for(const number of numbers3){
+        if(number > largeNum){
+             secondLargeNum = largeNum
+            largeNum = number
+        }
+        else if(number > secondLargeNum){
+            secondLargeNum = number
+        }
+    }
+    return secondLargeNum;
+    
+}
+
+const output3 =getSecondLargestNumber();
+console.log(output3); 
