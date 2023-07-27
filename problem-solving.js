@@ -29,7 +29,30 @@ console.log(output2);
 
 // Task 3: Write a JavaScript program to find the most frequent element in an array and return it. 
 
-const numbers2 =  [3, 5, 2, 5, 3, 3, 1, 4, 5]
+function findMostFrequentElement(numArray) {
+    
+    const frequencyMap = {};
+    for (const num of numArray) {
+      frequencyMap[num] = (frequencyMap[num] || 0) + 1;
+    }
+
+    let mostFrequentElement;
+    let highestFrequency = 0;
+  
+    for (const num in frequencyMap) {
+      if (frequencyMap[num] > highestFrequency) {
+        mostFrequentElement = num;
+        highestFrequency = frequencyMap[num];
+      }
+    }
+  
+    return parseInt(mostFrequentElement, 10); 
+  }
+  
+
+  const numArray = [3, 5, 2, 5, 3, 3, 1, 4, 5];
+  const output4 = findMostFrequentElement(numArray);
+  console.log(output4);
 
 
 //task:4 Implement a JavaScript function to find the second smallest element in an array of numbers. The function should return the second smallest number.
