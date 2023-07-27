@@ -11,3 +11,18 @@ const isReversedString = (text) => {
 const output1 = isReversedString('hello world')
 console.log(output1);
 
+// 2.Create a function that takes an array of numbers as input and returns the sum of all positive numbers in the array. 
+const numbers = [2, -5, 10, -3, 7]
+
+const addPositiveNumbers = () => {
+    let sum = 0;
+    for (const number of numbers) {
+        if (number > 0) {
+            sum += number
+        }
+    }
+    return sum;
+
+}
+const output2 = addPositiveNumbers()
+console.log(output2);
