@@ -77,3 +77,55 @@ const getSecondLargestNumber = () =>{
 
 const output3 =getSecondLargestNumber();
 console.log(output3); 
+
+// task: 5 Create a function that takes a sorted array of numbers and a target value as input. The function should find two numbers in the array that add up to the target value. Return an array containing the indices of the two numbers.
+
+function findTwoNumbersWithSum(arr, target) {
+    let left = 0;
+    let right = arr.length - 1;
+  
+    while (left < right) {
+      const sum = arr[left] + arr[right];
+  
+      if (sum === target) {
+        return [left, right];
+      } else if (sum < target) {
+        left++;
+      } else {
+        right--;
+      }
+    }
+  
+    return [];
+  }
+  
+  const inputArray = [1, 3, 6, 8, 11, 15];
+  const targetValue = 9;
+  const result = findTwoNumbersWithSum(inputArray, targetValue);
+  console.log(result);
+
+
+//   task 6: Create a program that generates a random password of a specified length. The password should include a mix of uppercase letters, lowercase letters, numbers, and special characters.
+
+function generateRandomPassword(length) {
+    const uppercaseLetters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+    const lowercaseLetters = 'abcdefghijklmnopqrstuvwxyz';
+    const numbers = '0123456789';
+    const specialCharacters = '!@#$%^&*()_-+=<>?/{}~|';
+  
+    const allCharacters = uppercaseLetters + lowercaseLetters + numbers + specialCharacters;
+    let password = '';
+  
+    for (let i = 0; i < length; i++) {
+      const randomIndex = Math.floor(Math.random() * allCharacters.length);
+      password += allCharacters.charAt(randomIndex);
+    }
+  
+    return password;
+  }
+  
+  const passwordLength = 12;
+  const randomPassword = generateRandomPassword(passwordLength);
+  console.log(randomPassword);
+  
+  
